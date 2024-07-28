@@ -1,0 +1,72 @@
+/* 애플 산돌 고딕 네오 폰트 정의 */
+@font-face {
+    font-family: 'AppleSDGothicNeo'; /* 폰트의 이름 */
+    src: url('/font/AppleSDGothicNeoR.woff2') format('woff2'),
+         url('/font/AppleSDGothicNeoR.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'AppleSDGothicNeo', sans-serif !important; /* 기본 폰트로 설정 */
+}
+
+h1, h2, h3, h4, h5, p {
+    font-family: 'AppleSDGothicNeo', serif !important; /* 특정 요소에 폰트 적용 */
+}
+
+.bible .book, .bible .verse {
+    text-align: left;
+    /* 단어 단위로 줄바꿈 */
+    word-break: break-word;
+}
+
+.bible .book {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+.bible .verse {
+    margin-bottom: 0.5em;
+}
+
+.numbers {
+    
+}
+
+.numbers .number {
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 0.5em;
+    width: 20px;;
+}
+
+
+.top-btn {
+    position: fixed; /* 요소를 화면에 고정 */
+    bottom: 20px;    /* 화면 아래에서 20px 떨어진 위치 */
+    left: 50%;       /* 화면의 중앙 위치 (왼쪽 기준) */
+    transform: translateX(-50%); /* 좌우 중앙 정렬을 위한 이동 */
+    z-index: 1000;   /* 다른 요소들 위에 위치시키기 위해 z-index 설정 */
+    opacity: 0.5;    /* 기본 투명도 설정 */
+    transition: opacity 0.3s ease; /* opacity 변경 시 부드러운 전환 효과 */
+}
+
+/* .top-btn의 hover 상태 스타일 설정 */
+.top-btn:hover {
+    opacity: 1; /* hover 시 선명하게 보이도록 설정 */
+}
+
+/* .top-btn-link 스타일 설정 */
+.top-btn-link {
+    display: block;  /* 링크를 블록 요소로 설정 */
+}
+
+/* .top-btn-img 스타일 설정 */
+.top-btn-img {
+    width: 50px;     /* 이미지의 너비 */
+    height: 50px;    /* 이미지의 높이 */
+}
