@@ -38,3 +38,25 @@ $(document).on('click', '#showVerses', ()=>{
         $(verse).css('color', 'rgb(33, 37, 41)')
     })
 })
+
+// 첫 페이지 로드 일때 scroll 위치가 100 이상이면 top-btn 을 보이게 한다.
+$(document).ready(()=>{
+    if ($(window).scrollTop() > 100) {
+        $('.top-btn').show()
+    }else{
+        $('.top-btn').hide()
+    }
+})
+
+// 스크롤 했을때 top-btn 이 맨 위로 올라가면 없애고 아니면 보이게 한다.
+
+$(window).scroll(()=>{
+    if ($(window).scrollTop() > 100) {
+        console.log("2")
+        $('.top-btn').show()
+    } else {
+        console.log("3")
+        // 찬천히 사라지게 한다.
+        $('.top-btn').fadeOut()
+    }
+})

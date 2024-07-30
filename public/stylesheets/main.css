@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 .numbers {
-    
+    margin-bottom: 10px;
 }
 
 .numbers .number {
@@ -44,15 +44,25 @@ h1, h2, h3, h4, h5, p {
     width: 20px;;
 }
 
-
 .top-btn {
     position: fixed; /* 요소를 화면에 고정 */
-    bottom: 20px;    /* 화면 아래에서 20px 떨어진 위치 */
-    left: 50%;       /* 화면의 중앙 위치 (왼쪽 기준) */
+    bottom: 10px;    /* 화면 아래에서 20px 떨어진 위치 */
+    left: 90%;       /* 화면의 중앙 위치 (왼쪽 기준) */
     transform: translateX(-50%); /* 좌우 중앙 정렬을 위한 이동 */
     z-index: 1000;   /* 다른 요소들 위에 위치시키기 위해 z-index 설정 */
     opacity: 0.5;    /* 기본 투명도 설정 */
     transition: opacity 0.3s ease; /* opacity 변경 시 부드러운 전환 효과 */
+}
+@media (min-width: 1200px) {
+    .top-btn {
+        position: fixed; /* 요소를 화면에 고정 */
+        bottom: 10px;    /* 화면 아래에서 20px 떨어진 위치 */
+        left: 50%;       /* 화면의 중앙 위치 (왼쪽 기준) */
+        transform: translateX(-50%); /* 좌우 중앙 정렬을 위한 이동 */
+        z-index: 1000;   /* 다른 요소들 위에 위치시키기 위해 z-index 설정 */
+        opacity: 0.5;    /* 기본 투명도 설정 */
+        transition: opacity 0.3s ease; /* opacity 변경 시 부드러운 전환 효과 */
+    }    
 }
 
 /* .top-btn의 hover 상태 스타일 설정 */
