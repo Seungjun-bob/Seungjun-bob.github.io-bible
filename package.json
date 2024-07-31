@@ -30,6 +30,7 @@
     "marked": "^7.0.5",
     "mobile-detect": "^1.4.5",
     "morgan": "~1.9.1",
+    "mysql2": "^3.11.0",
     "nodemon": "^2.0.22",
     "nvm": "^0.0.4",
     "passport": "^0.6.0",
