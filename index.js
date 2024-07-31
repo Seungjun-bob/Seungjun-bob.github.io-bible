@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const fs = require('fs')
 const timeOut = 1000*60*10
 require('dotenv').config();
+const logger = require('./logger');
 
 // const session = require('express-session'); 
 // // const sessionStore = require('session-file-store')(session);
@@ -179,46 +180,41 @@ app.use(function(req, res, next) {
 //   console.log("Listening on http port " + process.env.PORT);
 //   console.log("===========================================================");
 // }).timeout = timeOut;
-// if (nodeENV === 'development_nodemon'){
+if (nodeENV === 'nodemon'){
   HTTP.createServer(app).listen(process.env.PORT, function () {
     console.log("===========================================================");
     console.log("Listening on http port " + process.env.PORT);
     console.log("===========================================================");
   }).timeout = timeOut;
-// }
-// else if(nodeENV === 'development'){
-//   var ssl_options =
-//   {
-//     key: fs.readFileSync(process.env.SSL_KEY),
-//     cert:fs.readFileSync(process.env.SSL_CERT),
-//     ca: [
-//       fs.readFileSync(process.env.SSL_CA1),
-//       fs.readFileSync(process.env.SSL_CA2),
-//       fs.readFileSync(process.env.SSL_CA3)
-//     ]
-//   }
-//   HTTPS.createServer(ssl_options, app).listen(process.env.PORT, function () {
-//     console.log("===========================================================");
-//     console.log("Listening on https port " + process.env.PORT);
-//     console.log("===========================================================");
-//   }).timeout = timeOut;
-// }else if(nodeENV === 'production'){
-//   var ssl_options =
-//   {
-//     key: fs.readFileSync(process.env.SSL_KEY),
-//     cert:fs.readFileSync(process.env.SSL_CERT),
-//     ca: [
-//       fs.readFileSync(process.env.SSL_CA1),
-//       fs.readFileSync(process.env.SSL_CA2),
-//       fs.readFileSync(process.env.SSL_CA3)
-//     ]
-//   }
-//   HTTPS.createServer(ssl_options, app).listen(process.env.PORT, function () {
-//     console.log("===========================================================");
-//     console.log("Listening on https port " + process.env.PORT);
-//     console.log("===========================================================");
-//   }).timeout = timeOut;
-// }
+}
+else if(nodeENV === 'development'){
+  var ssl_options =
+  {
+    key: fs.readFileSync(process.env.SSL_KEY),
+    cert:fs.readFileSync(process.env.SSL_CERT),
+    ca: [
+      fs.readFileSync(process.env.SSL_CA1),
+      fs.readFileSync(process.env.SSL_CA2),
+      fs.readFileSync(process.env.SSL_CA3)
+    ]
+  }
+  HTTPS.createServer(ssl_options, app).listen(process.env.PORT, function () {
+    console.log("===========================================================");
+    console.log("Listening on https port " + process.env.PORT);
+    console.log("===========================================================");
+  }).timeout = timeOut;
+}else if(nodeENV === 'production'){
+  var ssl_options =
+  {
+    key: fs.readFileSync('/etc/letsencrypt/live/christian-value.site/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/christian-value.site/fullchain.pem')
+  }
+  HTTPS.createServer(ssl_options, app).listen(process.env.PORT, function () {
+    console.log("===========================================================");
+    console.log("Listening on https port " + process.env.PORT);
+    console.log("===========================================================");
+  }).timeout = timeOut;
+}
 
 
 
