@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 const fs = require('fs')
 const timeOut = 1000*60*10
 require('dotenv').config();
+const logger = require('./logger');
 
 // const session = require('express-session'); 
 // // const sessionStore = require('session-file-store')(session);

@@ -4,3 +4,4 @@ memory.pem
 memory.ppk
 package-lock.json
 ecosystem.config.js
+logs
