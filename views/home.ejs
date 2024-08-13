@@ -2,7 +2,8 @@
 <html lang="ko">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=no"/>
         <meta name="description" content="" />
         <meta name="author" content="ksj" />
         <meta property="og:title" content="Christian value">
@@ -26,6 +27,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/main.css" rel="stylesheet" />
+        <link href="fontawesome/css/all.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -61,14 +63,27 @@
                 <div>
                     <button id="showVerses" class="btn btn-dark">구절 보이기</button> 
                     <button id="hideVerses" class="btn btn-dark">구절 숨기기</button>
+                    <button id="random" class="btn btn-outline-dark">랜덤</button>
                     <p class="mt-1">* 각 구절 클릭시 숨김처리</p>
 
                 </div>
                 
                 <div class="bible">
                     <% for (let i = 0; i < verses.length; i++) { %>
-                        <h5 class="book" data-number="<%= verses[i].num %>"><%= verses[i].num %>. <%= verses[i].book %></h5>
-                        <p class="verse" style="cursor: pointer;"><%= verses[i].text %></p>
+                        <div class="bible-div">
+                            <div class="div01">
+                                <h5 class="book" data-number="<%= verses[i].num %>"><%= verses[i].num %>. <span class="book-name"><%= verses[i].book %></span></h5>
+                                <div>
+                                    <button class="button-none ">
+                                        <i class="far fa-lightbulb hint"></i>
+                                    </button>
+                                    <button class="button-none ">
+                                        <i class="far fa-eye show-icon"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <p class="verse" style="cursor: pointer;"><%= verses[i].text %></p>
+                        </div>
                     <% } %>
                 </div>
             </div>

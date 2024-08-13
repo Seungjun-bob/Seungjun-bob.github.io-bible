@@ -15,6 +15,10 @@ h1, h2, h3, h4, h5, p {
     font-family: 'AppleSDGothicNeo', serif !important; /* 특정 요소에 폰트 적용 */
 }
 
+.bible-div{
+    touch-action: manipulation
+}
+
 .bible .book, .bible .verse {
     text-align: left;
     /* 단어 단위로 줄바꿈 */
@@ -24,7 +28,7 @@ h1, h2, h3, h4, h5, p {
 .bible .book {
     font-size: 1.5em;
     font-weight: bold;
-    margin-top: 1em;
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
@@ -79,4 +83,52 @@ h1, h2, h3, h4, h5, p {
 .top-btn-img {
     width: 50px;     /* 이미지의 너비 */
     height: 50px;    /* 이미지의 높이 */
+}
+
+/* 모바일에서만 보이기 */
+@media (max-width: 1200px) {
+    .div01{
+        display: flex; align-items: center; justify-content: space-between
+    }
+    .hide-icon {
+        cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+        font-size: 30px;     /* 이미지의 너비 */
+        display: none !important; /* 요소를 화면에서 숨김 */
+    }
+    .show-icon {
+        cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+        font-size: 30px;     /* 이미지의 너비 */   
+        width: 60px;
+    }
+    .hint {
+        cursor: pointer;
+        font-size: 30px;
+    }
+}
+
+/* 웹에서만 보이게 하기 */
+@media (min-width: 1200px) {
+    .div01 {
+        display: flex; align-items: center;
+    }
+    .hide-icon, .show-icon, .hint {
+        display: none !important; /* 요소를 화면에서 숨김 */
+    }
+}
+
+.random-hide {
+    color: rgb(255, 255, 255);
+}
+.random-show {
+    color: rgb(33, 37, 41)
+}
+
+.button-none {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }

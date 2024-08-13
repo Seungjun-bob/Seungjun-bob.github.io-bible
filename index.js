@@ -53,6 +53,7 @@ app.use('/js', express.static(__dirname + '/public/javascripts'));
 app.use('/css', express.static(__dirname + '/public/stylesheets'));
 app.use('/img', express.static(__dirname + '/public/images'));
 app.use('/font', express.static(__dirname + '/public/font'));
+app.use('/fontawesome', express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free'));
 // app.use('/scss', express.static(__dirname + '/public/scss'));
 // app.use('/imgFile', express.static(__dirname + '/uploadedFiles'));
 
